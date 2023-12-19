@@ -22,5 +22,5 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/review' , [SaitController::class , 'review']);
+Route::get('/review' , [SaitController::class , 'review'])->name('review');
 Route::post('/review/check' , [SaitController::class , 'review_check']);

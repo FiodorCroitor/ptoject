@@ -1,14 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Models;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use App\Contact;
 
-class SaitController extends Controller
+class Contact extends Model
 {
+
     public function review(){
-     return view('Review');
+        return view('Review');
     }
     public function review_check(Request $request){
         $validate = $request->validate([
@@ -16,7 +19,7 @@ class SaitController extends Controller
             'password' => 'required|min:4|max:100',
         ]);
 
-        $review = new Contact();
+        $review = new \App\Contact();
         $review->email = $request->input('email');
         $review->password = $request ->input('password');
 
@@ -26,4 +29,6 @@ class SaitController extends Controller
 
 
     }
+
+
 }
