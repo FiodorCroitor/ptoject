@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Providers\Contact;
 
 class SaitController extends Controller
 {
@@ -14,5 +15,8 @@ class SaitController extends Controller
             'email' =>  'required|min:4|max:25' ,
             'password' => 'required|min:4|max:100',
         ]);
+
+        $review = new Conatct
+
     }
 }
